@@ -1,0 +1,67 @@
+.ui-kits {
+    padding-top: 100px;
+    .ui__kit-inner {
+        @include make-row();
+    }
+    padding-bottom: 100px;
+    .typography {
+        margin-bottom: 100px;
+        @include make-col-ready();
+        @include make-col(12);
+        @include breakpoint(768) {
+            @include make-col(9);
+            ul {
+                display: flex;
+                justify-content: space-between;
+                li {
+                    flex: initial;
+                    max-width: 500px;
+                }
+            }
+            li * {
+                margin-bottom: 40px;
+            }
+        }
+    }
+    .buttons__area {
+        .ss-btn:not(:last-child) {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+    }
+    .social__blocks .social__icon-title {
+        font-size: em(16);
+        margin-bottom: 15px;
+    }
+    .social__icon {
+        display: flex;
+        margin-bottom: 50px;
+        li {
+            margin-right: 10px;
+        }
+    }
+    .ui__kit-input__block {
+        @include make-col-ready();
+        @include make-col(12);
+        @include breakpoint(768) {
+            @include make-col(4);
+        }
+        .form-group, .ss-container{
+            margin-bottom: 35px;
+        }
+    }
+    .ui__kit-alert__block {
+        @include make-col-ready();
+        @include make-col(12);
+        @include breakpoint(768) {
+            @include make-col(7);
+            @include make-col-offset(1);
+        }
+    }
+    .ui__kit-alert {
+        margin-bottom: 50px;
+        .alert {
+            margin-bottom: 20px;
+        }
+    }
+}

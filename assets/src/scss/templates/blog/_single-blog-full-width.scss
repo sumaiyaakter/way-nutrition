@@ -1,0 +1,11 @@
+.single-blog__fullwidth{
+    .blog-wrapper{
+        @include make-col-ready();
+        @include make-col(12);
+        @include breakpoint(992) {
+            @include make-col(10);
+            @include make-col-offset(1);
+        }
+
+    }
+}

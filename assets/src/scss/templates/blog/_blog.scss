@@ -1,0 +1,163 @@
+.blog-archive{
+    padding: 50px 0;
+    @include breakpoint(768) {
+        padding: 110px 0;
+    }
+    .blog-inner {
+         @include make-row();
+     }
+     .blog-wrapper{
+         @include make-col-ready();
+         @include make-col(12);
+         @include breakpoint(992) {
+             @include make-col(8);
+         }
+     }
+     .blog-sidebar{
+         @include make-col-ready();
+         @include make-col(12);
+         @include breakpoint(992) {
+             @include make-col(4);
+         }
+     }
+
+     .blog-wrapper{
+        margin-bottom: 50px;
+        @include breakpoint(992) {
+           margin-bottom: 0;
+        }
+     }
+
+     .blog-items{
+        .blog-single__item {
+            background:  #fff;
+            box-shadow: 0 0 10px rgba(#405158,.14);
+            padding-bottom: 40px;
+            &:not(:last-child){
+                margin-bottom: 50px;
+            }
+            &:last-child{
+                margin-bottom: 60px;
+                @include breakpoint(768) {
+                    margin-bottom: 80px;
+                }
+            }
+            &:hover{
+                .blog-single__item-img {
+                    img{
+                        transform: scale(1.1);
+                    }
+                }
+            }
+            &-title {
+                border-bottom:  1px solid #efefef;
+                padding: 20px;
+                @include breakpoint(576) {
+                    padding: 40px 20px;
+                }
+                @include breakpoint(768) {
+                    padding: 42px;
+                }
+                h4{
+                    font-size: em(18);
+                    @include breakpoint(576) {
+                        font-size: em(28);
+                    }
+                    a{
+                        color: #3c4351;
+                        font-weight: 700;
+                        transition: .3s;
+                        &:hover{
+                            color: $color-primary;
+                        }
+                    }
+                }
+            }
+            &-img{
+                margin-bottom: 35px;
+                overflow: hidden;
+                width: 100%;
+                a{
+                    display: block;
+                }
+                img{
+                    width: 100%;
+                    transition: .3s;
+                }
+            }
+            &-content{ 
+                padding: 0 20px;
+                @include breakpoint(768) {
+                padding: 0 42px;;
+                }
+                p{
+                    margin-bottom: 30px;
+                }
+            }
+        }
+
+        .continue-reading{
+            color: $color-primary;
+            font-size: em(16);
+            @include font-face($font-roboto);
+            font-weight: 700;
+            text-transform: capitalize;
+            transition: .3s;
+            &:hover{
+                color: darken($color-primary, 5%);
+            }
+            i{
+                margin-left: 2px;
+            }
+        }
+
+        .blog-single__item-post{
+            display: flex;
+            padding: 20px;
+            @include breakpoint(768) {
+            padding: 20px 42px;;
+            }
+            li{
+                color: #6a717e;
+                @include font-face($font-roboto);
+                font-size: em(15);
+                font-weight: 400;
+                position: relative;
+                z-index: 1;
+                &:not(:last-child){
+                    margin-right: 20px;
+                    @include breakpoint(768) {
+                        margin-right: 40px;
+                    }
+                }
+                &:not(:last-child){
+                    &:after{
+                        border-right: 1px solid #dce0e7;
+                        content: "";
+                        left: 12px;
+                        top: 0;
+                        height: 100%;
+                        position: absolute;
+                        width: 100%;
+                        z-index: -1;
+                        @include breakpoint(768) {
+                            left: 22px;
+                        }
+                    }
+                }
+                a{
+                    color: #6a717e;
+                    transition: .3s;
+                    &:hover{
+                        color: $color-primary;
+                    }
+                }
+            }
+        }
+    }
+    .pagination{
+        justify-content: left;
+    }
+ }
+ 
+ 

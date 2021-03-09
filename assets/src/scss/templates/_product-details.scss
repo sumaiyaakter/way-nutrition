@@ -1,0 +1,333 @@
+.products-details {
+    padding: 90px 15px;
+    /* Select */
+    @include breakpoint(768) {
+        padding: 90px 15px;
+    }
+    .products__details-wrapper {
+        padding-bottom: 60px;
+        @include breakpoint(768) {
+            padding-bottom: 90px;
+        }
+    }
+    /*-- tabs --*/
+    .product-info {
+        @include make-container();
+        @include make-container-max-widths();
+    }
+    .product-info-tab {
+        @include make-col-ready();
+        @include make-col(12);
+    }
+    .product__info-tab {
+        display: flex;
+        flex-direction: column;
+        .nav-tabs {
+            border-bottom: 1px solid #ededed;
+            display: flex;
+            a {
+                color: $color-black;
+                display: inline-block;
+                @include font-face($font-oswald);
+                font-size: em(15);
+                font-weight: 500;
+                margin-right: 25px;
+                padding-bottom: 25px;
+                position: relative;
+                text-transform: uppercase;
+                transition: .3s;
+                &.active {
+                    color: $color-primary;
+                    &:after {
+                        content: "";
+                        border-bottom: 1px solid $color-primary;
+                        height: 100%;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                    }
+                }
+                @include breakpoint(768) {
+                    font-size: em(18);
+                    margin-right: 85px;
+                }
+            }
+        }
+        .tab__items {
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+            flex-wrap: wrap;
+            @include breakpoint(768) {
+                flex-direction: row;
+            }
+        }
+        .nutrition-info {
+            border-right: 1px solid #ededed;
+            margin-bottom: 30px;
+            @include breakpoint(768) {
+                margin-bottom: 0;
+                margin-right: 30px;
+                min-width: 355px;
+            }
+            &__select {
+                margin-bottom: 25px;
+            }
+        }
+        .nutrition-info__top {
+            border-bottom: 1px solid #ededed;
+            margin-bottom: 25px;
+            padding-right: 40px;
+            padding-bottom: 10px;
+            h6 {
+                color: $color-black;
+                display: flex;
+                font-size: em(16);
+                font-weight: 400;
+                line-height: em(20);
+                justify-content: space-between;
+                margin-bottom: 20px;
+                .info__title {
+                    opacity: .6;
+                }
+            }
+        }
+        /* nav-tabs-2 */
+        .nav-tabs-2 {
+            border-radius: 3px;
+            display: flex;
+            margin-right: 40px;
+            li {
+                width: 100%;
+                a {
+                    border: 1px solid #dcdcdc;
+                    border-radius: 3px;
+                    color: $color-black;
+                    font-size: em(16);
+                    padding: 15px 0 15px 15px;
+                    display: block;
+                    font-weight: 500;
+                    &.active {
+                        background: #f9f9f9;
+                        border: 1px solid #dcdcdc;
+                    }
+                }
+                &:first-child {
+                    flex: 0 0 33%;
+                    a {
+                        &.active {
+                            border-right: 0;
+                        }
+                    }
+                }
+                &:last-child {
+                    a {
+                        &.active {
+                            border-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+        .nutrition-facts {
+            padding-right: 40px;
+            .nutrition-facts__head {
+                background-color: #ededed;
+                border-radius: 3px;
+                padding: 0 10px;
+                margin-bottom: 15px;
+                li {
+                    font-size: em(15);
+                    font-weight: 600;
+                    padding: 5px 0;
+                }
+            }
+            .nutrition-facts__block {
+                padding: 0 10px;
+            }
+            ul {
+                display: flex;
+                li {
+                    display: inline-block;
+                    font-size: em(14);
+                    font-weight: 500;
+                    line-height: 35px;
+                    text-align: right;
+                    width: 30%;
+                    &:nth-child(1) {
+                        width: 50%;
+                        text-align: left;
+                    }
+                    &:last-child {
+                        width: 20%;
+                    }
+                }
+            }
+        }
+        .nutrition-facts__block {
+            flex-direction: column;
+            &-sub {
+                li {
+                    &:nth-child(1) {
+                        font-weight: 400;
+                        padding-left: 20px;
+                        opacity: .6;
+                    }
+                }
+            }
+        }
+        .nutrition-info__content {
+            margin-bottom: 40px;
+            @include breakpoint(768) {
+                max-width: 650px;
+            }
+            h5 {
+                font-size: em(18);
+                font-weight: 600;
+                line-height: em(24);
+                margin-bottom: 30px;
+            }
+            p {
+                font-size: em(15);
+                font-weight: 400;
+                @include breakpoint(992) {
+                    font-size: em(16);
+                }
+            }
+        }
+        .productDescription {
+            @include breakpoint(768) {
+                max-width: 680px;
+            }
+            p {
+                font-weight: 400;
+            }
+        }
+        .nutritionInfo {
+            padding-top: 0;
+        }
+        .nutrition-info {
+            padding-top: 20px;
+        }
+        .nutrition-info__contents {
+            padding-top: 20px;
+        }
+        .product-review {
+            border-bottom: 1px solid #ededed;
+            max-width: 740px;
+            margin: 0;
+        }
+        .product-review__content {
+            display: flex;
+            padding-bottom: 30px;
+            padding-top: 30px;
+            @include breakpoint(768) {
+                padding-right: 40px;
+            }
+        }
+        .reviewer__img {
+            img {
+                border-radius: 50%;
+            }
+        }
+        .item__content {
+            margin-left: 15px;
+            width: 100%;
+            .title {
+                align-items: center;
+                display: flex;
+                margin-bottom: 10px;
+                h5 {
+                    color: $color-black;
+                    @include font-face($font-roboto);
+                    font-size: em(18);
+                    font-weight: 600;
+                    line-height: em(24);
+                    margin-right: 20px;
+                }
+            }
+            .rating {
+                span {
+                    color: $color-primary;
+                    font-size: em(18);
+                }
+            }
+            p {
+                font-size: em(16);
+                font-weight: 400;
+                line-height: em(28);
+            }
+        }
+        .form-review {
+            max-width: em(740);
+            width: 100%;
+            margin-top: em(50);
+            .comment-form-rating {
+                margin-bottom: em(30);
+                h6 {
+                    @include font-face($font-oswald);
+                    text-transform: uppercase;
+                    margin-bottom: em(30);
+                }
+                button {
+                    background: transparent;
+                    margin-right: em(3);
+                }
+                i {
+                    font-size: em(34);
+                    color: $color-black;
+                    transition: .3s;
+                    &:hover {
+                        color: $color-primary;
+                    }
+                }
+                .stars {
+                    direction: rtl;
+                    cursor: pointer;
+                    text-align: left;
+                    i {
+                        color: #ccced2;
+                        font-size: em(26);
+                        margin-right: 2px;
+                        height: inherit;
+                        width: inherit;
+                        transition: .3s;
+                        &.active,
+                        &.active~i,
+                        &:hover,
+                        &:hover~i {
+                            color: $color-primary;
+                        }
+                    }
+                }
+            }
+            .form-review-wrapper {
+                .form-control {
+                    width: 100%;
+                    &:focus {
+                        background: #f6f6f6;
+                    }
+                }
+                &.form-group {
+                    align-items: flex-start;
+                }
+                textarea {
+                    line-height: em(28);
+                    padding: em(15);
+                    margin-bottom: em(20);
+                }
+                .ss-btn-primary {
+                    min-width: em(240);
+                    min-height: em(60);
+                }
+            }
+        }
+    }
+    .vbox-overlay {
+        z-index: 9999;
+    }
+    .vbox-container {
+        overflow: hidden;
+    }
+}

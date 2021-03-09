@@ -1,0 +1,99 @@
+.ss-container {
+    position: relative;
+    .ss-select {
+        border: 1px solid #b4b4b4;
+        border-radius: 3px;
+        cursor: pointer;
+        position: relative;
+    }
+    .ss-selected {
+        overflow: hidden;
+        display: block;
+        padding: 0 15px;
+        font-size: 16px;
+        font-weight: 400;
+        color: #7d7f88;
+        min-height: 50px;
+        line-height: 50px;
+        label {
+            cursor: pointer;
+        }
+    }
+    .ss-option-text {
+        cursor: pointer;
+        display: block;
+    }
+    .ss-option-text {
+        color: #2b3044;
+    }
+    .ss-option-selected {
+        .ss-option-text {
+            color: #47b749;
+        }
+    }
+    .ss-pointer {
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transition: .3s;
+        transform-origin: 50% 20%;
+        border: solid 5px transparent;
+        border-top: solid 5px #000;
+    }
+    .ss-pointer-up {
+        transform: rotate(180deg);
+    }
+    .ss-options {
+        list-style: none;
+        box-shadow: 0 13px 70px rgba(36, 38, 45, 0.2);
+        display: none;
+        position: absolute;
+        z-index: 2000;
+        margin: 0;
+        padding: 0;
+        background: #fff;
+        overflow: auto;
+        width: 100%;
+        font-size: 18px;
+        height: 200px;
+        li {
+            &:first-child {
+                a {
+                    padding-top: 25px;
+                }
+            }
+            &:last-child {
+                a {
+                    padding-bottom: 25px;
+                }
+            }
+            a {
+                padding-right: 15px;
+                padding-left: 30px;
+            }
+        }
+    }
+    .ss-option {
+        padding: 10px;
+        display: block;
+        overflow: hidden;
+        text-decoration: none;
+        color: #333;
+        cursor: pointer;
+        transition: all 0.25s ease-in-out;
+    }
+    .ss-option-image,
+    .ss-selected-image {
+        vertical-align: middle;
+        float: left;
+        margin-right: 5px;
+        max-width: 64px;
+    }
+    .ss-desc {
+        color: #aaa;
+        display: block;
+        overflow: hidden;
+        font-weight: normal;
+        line-height: 1.4em;
+    }
+}

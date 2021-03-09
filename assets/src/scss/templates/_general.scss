@@ -1,0 +1,64 @@
+.site-container {
+    @include make-container();
+    @include make-container-max-widths();
+}
+
+.section-title {
+    @include make-row();
+    .section-title__inner {
+        @include make-col-ready();
+        @include make-col(12);
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    h3 {
+        font-size: em(42);
+        font-weight: 500;
+        @include font-face($font-roboto);
+        text-transform: capitalize;
+    }
+}
+
+.ss-loading {
+    position: relative;
+    display: block;
+    z-index: 13;
+    margin: 15px auto;
+    width: 100px;
+    height: 100px;
+    border: 5px solid transparent;
+    border-radius: 50%;
+    background-color: transparent;
+    &:before {
+        position: absolute;
+        display: block;
+        content: '';
+        z-index: 12;
+        top: 4px;
+        left: 4px;
+        width: 82px;
+        height: 82px;
+        border-radius: 50%;
+        background-color: #fff;
+    }
+    &:after {
+        position: absolute;
+        display: block;
+        top: 0;
+        content: '';
+        z-index: 11;
+        top: 0px;
+        left: 0px;
+        width: 45px;
+        height: 45px;
+        border-radius: 200px 0 0 0;
+        background: linear-gradient(45deg, rgba(0, 0, 0, 0) 0%, rgba($color-primary, 1) 50%, rgba($color-primary, 1) 100%);
+        animation: loading .9s linear infinite;
+    }
+}
+.entry-footer {
+    .post-edit-link {
+        margin-top: 50px;
+        color: $color-primary;
+    }
+}

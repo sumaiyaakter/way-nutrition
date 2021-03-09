@@ -1,0 +1,51 @@
+// input fields
+%form-control {
+    padding: 0 15px;
+    min-height: 50px;
+    line-height: 50px;
+    background: #fff;
+    border: 1px solid #b4b4b4;
+    border-radius: 3px;
+    font-size: em(16);
+    transition: .2s;
+    position: relative;
+    color: $color-black;
+    &:focus {
+        border-color: $color-primary;
+    }
+}
+
+// buttons
+%ss-btn {
+    border-radius: 3px;
+    font-size: em(16);
+    font-weight: 700;
+    text-transform: uppercase;
+    max-height: 50px;
+    line-height: 50px;
+    position: relative;
+    transition: .3s;
+    z-index: 1;
+    overflow: hidden;
+    text-align: center;
+    &:after {
+        bottom: 0;
+        content: "";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        transition: 0.3s;
+        z-index: -1;
+        width: 0;
+    }
+    &:hover:after {
+        width: 100%;
+    }
+}
+%ss-btn-primary {
+    background: $color-primary;
+    &:after {
+        background: darken($color-primary, 5%);
+    }
+}

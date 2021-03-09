@@ -1,0 +1,71 @@
+/*=================================================
+Breadcrumbs
+=================================================*/
+
+.entry-product-list {
+    background: linear-gradient(45deg, rgba(215, 215, 215, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    padding: 80px 0;
+    .breadcrumbs--inner {
+        @include make-row();
+    }
+    .breadcrumbs {
+        @include make-col-ready();
+        @include make-col(12);
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    .entry-title {
+        h1 {
+            font-size: em(48);
+            line-height: em(65);
+            font-weight: 400;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+    }
+    .entry-breadcrumbs {
+        &__list {
+            display: flex;
+        }
+        li {
+            font-size: em(20);
+            @include font-face($font-oswald);
+            text-transform: uppercase;
+            @include breakpoint(768) {
+                font-size: em(24);
+            }
+            a {
+                color: $color-black;
+                transition: .3s;
+                &::focus {
+                    color: $color-primary;
+                }
+                &:hover{
+                    color: $color-primary;
+
+                }
+            }
+            & {
+                position: relative;
+                z-index: 1;
+            }
+            &:not(:last-child) {
+                margin-right: 30px;
+                &:before {
+                    border-right: 3px solid #2b3044;
+                    content: "";
+                    height: 100%;
+                    left: 18px;
+                    position: absolute;
+                    top: 0;
+                    width: 100%;
+                    transform: skewX(-20deg);
+                    z-index: -1;
+                }
+            }
+        }
+    }
+}

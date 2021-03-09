@@ -1,0 +1,294 @@
+.header {
+    &__toolbar {
+        background: $color-primary;
+        padding: 10px 0;
+    }
+    &__toolbar--inner {
+        @include make-row();
+    }
+    .toolbar {
+        @include make-container();
+        @include make-container-max-widths();
+        @include breakpoint(768) {
+            display: flex;
+            justify-content: space-between;
+        }
+        &__text {
+            display: flex;
+            justify-content: center;
+            @media (max-width: 767px) {
+                margin-bottom: 10px;
+            }
+            h6 {
+                color: $color-white;
+                font-size: em(12);
+                @include font-face($font-roboto);
+                font-weight: 700;
+                line-height: em(20);
+                text-transform: uppercase;
+                @include breakpoint(768) {
+                    font-size: em(14);
+                }
+            }
+        }
+        &__img {
+            margin-right: 15px;
+        }
+        &__user {
+            display: flex;
+            justify-content: space-between;
+            &--menu {
+                display: flex;
+                li {
+                    position: relative;
+                    >a {
+                        color: $color-white;
+                        font-size: em(12);
+                        font-weight: 500;
+                        text-transform: uppercase;
+                        position: relative;
+                        z-index: 1;
+                        transition: .3s;
+                        &:hover {
+                            color: $color-black;
+                        }
+                    }
+                    &.login {
+                        margin-right: 15px;
+                        padding-right: 15px;
+                    }
+                    .alert {
+                        height: auto;
+                        font-size: em(14);
+                        line-height: 26px;
+                        color: $color-black;
+                        padding: 16px;
+                        background: none;
+                        a{
+                            color: $color-primary;
+                        }
+                    }
+                }
+                li:not(:last-child) {
+                    &:after {
+                        border-right: 1px solid rgba(0, 0, 0, 0.15);
+                        content: "";
+                        height: 20px;
+                        right: 0;
+                        position: absolute;
+                        top: 50%;
+                        width: 100%;
+                        transform: translateY(-50%);
+                        @include breakpoint(768) {
+                            height: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__main {
+        padding: 20px 0;
+    }
+    &__main--inner {
+        @include make-row();
+    }
+    &__main--col {
+        @include make-col-ready();
+        @include make-col(12);
+    }
+    &__wrapper {
+        text-align: center;
+        @include breakpoint(768) {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            text-align: left;
+        }
+    }
+    &__logo {
+        margin-bottom: 10px;
+        @include breakpoint(768) {
+            margin-bottom: 0;
+        }
+    }
+    &__block {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__contact {
+        position: relative;
+        @include breakpoint(768) {
+            margin-right: 20px;
+        }
+        @include breakpoint(992) {
+            margin-right: 45px;
+        }
+        @include breakpoint(1200) {
+            margin-right: 70px;
+        }
+        &::after {
+            @include breakpoint(768) {
+                border-right: 1px solid #e1e1e1;
+                content: "";
+                height: 100%;
+                position: absolute;
+                right: -10px;
+                top: 0;
+                width: 100%;
+                z-index: -1;
+            }
+            @include breakpoint(992) {
+                right: -24px;
+            }
+            @include breakpoint(1200) {
+                right: -35px;
+            }
+        }
+        p {
+            color: #444444;
+            font-size: em(14);
+            font-weight: 400;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+        }
+        a {
+            color: #444444;
+            font-weight: 500;
+            font-size: em(16);
+            @include breakpoint(992) {
+                font-size: em(22);
+            }
+        }
+    }
+    &__cart {
+        position: relative;
+        &--btn {
+            color: $color-primary;
+            font-size: em(16);
+            font-weight: 500;
+            text-transform: uppercase;
+            position: relative;
+            padding-right: 48px;
+            &::after {
+                background: $color-primary;
+                border-radius: 50%;
+                color: $color-white;
+                height: 38px;
+                line-height: 38px;
+                content: attr(data-value);
+                position: absolute;
+                right: 0;
+                text-align: center;
+                top: -7px;
+                width: 38px;
+                z-index: -1;
+                cursor: pointer;
+            }
+        }
+        .cart__img {
+            margin-right: 15px;
+        }
+    }
+    .ss-container {
+        margin-right: 10px;
+        .ss-select {
+            border: none;
+        }
+        .ss-selected {
+            min-height: 0;
+            line-height: 0;
+            margin-right: 15px;
+            margin-top: 3px;
+        }
+        .ss-pointer {
+            border-top: solid 5px #fff;
+            margin-top: -3px;
+        }
+        .ss-options {
+            top: 30px;
+            li {
+                &:first-child {
+                    a {
+                        padding-top: 15px;
+                    }
+                }
+                &:last-child {
+                    a {
+                        padding-bottom: 15px;
+                        border-bottom: 0;
+                    }
+                }
+                a {
+                    text-align: center;
+                    padding-right: 0;
+                    padding-left: 25px;
+                    border-bottom: 1px solid #eee;
+                }
+            }
+        }
+    }
+}
+
+.search-form-wrapper {
+    display: none;
+    position: relative;
+    @include breakpoint(992) {
+        display: block;
+    }
+    .form__field {
+        position: relative;
+        input {
+            background: #ebebeb;
+            border: 0;
+            height: 50px;
+            padding: 0px 50px 0px 20px;
+            border-radius: 50px;
+            width: 100%;
+            @include breakpoint(992) {
+                width: 390px;
+            }
+            @include breakpoint(1200) {
+                width: 520px;
+            }
+        }
+        .btn__submit {
+            background: transparent;
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 50px;
+            width: 50px;
+            line-height: 60px;
+            border: 0;
+            background: transparent;
+            backface-visibility: hidden;
+            .search-icon {
+                background: transparent url(..//layout/search.svg);
+                background-repeat: no-repeat;
+                background-position: center center;
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+}
+
+.navigation {
+    .search-form-wrapper {
+        display: block;
+        margin: 20px auto 10px;
+        @include breakpoint(992) {
+            display: none;
+        }
+        .form__field {
+            width: 300px;
+            display: flex;
+            margin: 0 auto;
+        }
+        input {
+            border-radius: 3px;
+        }
+    }
+}

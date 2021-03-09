@@ -1,0 +1,70 @@
+.ss-btn {
+    border-radius: 3px;
+    font-size: em(16);
+    font-weight: 700;
+    text-transform: uppercase;
+    max-height: 50px;
+    line-height: 50px;
+    position: relative;
+    transition: .3s;
+    z-index: 1;
+    overflow: hidden;
+    text-align: center;
+    &:after {
+        bottom: 0;
+        content: "";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        transition: 0.3s;
+        z-index: -1;
+        width: 0;
+    }
+    &:hover:after {
+        width: 100%;
+    }
+    &-fill {
+        color: $color-white;
+        padding: 0 25px;
+    }
+    &-border {
+        background: transparent;
+        border: 2px solid $color-primary;
+        color: $color-primary;
+        font-weight: 600;
+        padding: 0 30px;
+        &:hover {
+            color: $color-white;
+        }
+        &:after {
+            background: $color-primary;
+        }
+    }
+    &-lg {
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+    &-primary {
+        background: $color-primary;
+        &:after {
+            background: darken($color-primary, 5%);
+        }
+    }
+    &-disabled {
+        background: #c7e9c8;
+        cursor: not-allowed;
+    }
+    &-danger {
+        background: #f42525;
+        &:after {
+            background: darken(#f42525, 10%);
+        }
+    }
+    &-dark {
+        background: $color-black;
+        &:after {
+            background: darken($color-black, 5%);
+        }
+    }
+}

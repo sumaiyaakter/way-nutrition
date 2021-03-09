@@ -1,0 +1,87 @@
+.footer {
+    background: $color-black;
+    padding: 70px 0;
+    .footer-inner {
+        @include make-row();
+    }
+    &-wrapper {
+        @include make-col-ready();
+        @include make-col(12);
+        margin-bottom: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        @include breakpoint(576) {}
+        @include breakpoint(1200) {
+            flex-wrap: nowrap;
+        }
+    }
+    &-widget {
+        margin-bottom: 30px;
+        flex: 0 0 100%;
+        @include breakpoint(576) {
+            flex: 0 0 50%;
+        }
+        @include breakpoint(1200) {
+            flex: initial;
+        }
+        &__title {
+            color: #fff;
+            margin-bottom: 20px;
+            @include font-face($font-roboto);
+        }
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            li {
+                flex: 0 0 50%;
+                line-height: 26px;
+                @include breakpoint(1200) {
+                    flex: 0 0 47%;
+                }
+                a {
+                    font-size: em(14);
+                    color: #fff;
+                    font-weight: 300;
+                    transition: .3s;
+                    &:hover {
+                        color: $color-primary;
+                    }
+                }
+            }
+        }
+        &__payment,
+        &__social {
+            @media only screen and (max-width: 575px) {
+                flex: 0 0 50%;
+            }
+            ul {
+                flex-wrap: nowrap;
+                li {
+                    flex: initial;
+                    &:not(:last-child) {
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+        &__payment {
+            @include breakpoint(1200) {
+                flex: 0 0 18%;
+            }
+        }
+    }
+    &-copyright {
+        @include make-row();
+        p {
+            @include make-col-ready();
+            @include make-col(12);
+            color: $color-white;
+            font-size: em(13);
+            font-weight: 300;
+            @media (max-width: 450px) {
+                text-align: center;
+            }
+        }
+    }
+}

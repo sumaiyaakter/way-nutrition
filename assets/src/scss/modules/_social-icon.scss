@@ -1,0 +1,48 @@
+.ss-social-btn {
+    transition: .3s;
+    text-align: center;
+    color: #fff;
+    height: 30px;
+    line-height: 30px;
+    width: 30px;
+    @include breakpoint(992) {
+        height: 50px;
+        width: 50px;
+        line-height: 50px;
+    }
+    &.ss-btn-twitter {
+        background: #63cdf1;
+        &:hover {
+            background: darken(#63cdf1, 8%);
+            color: #fff;
+        }
+    }
+    &.ss-btn-facebook {
+        background: #507cbe;
+        &:hover {
+            background: darken(#507cbe, 8%);
+            color: #fff;
+        }
+    }
+    &.ss-btn-instagram {
+        background: #c7c5b3;
+        &:hover {
+            background: darken(#c7c5b3, 8%);
+            color: #fff;
+        }
+    }
+    &.ss-btn-youtube {
+        background: #d32c1f;
+        &:hover {
+            background: darken(#d32c1f, 8%);
+            color: #fff;
+        }
+    }
+    &.ss-btn-linkedin {
+        background: #0274b3;
+        &:hover {
+            background: darken(#0274b3, 8%);
+            color: #fff;
+        }
+    }
+}

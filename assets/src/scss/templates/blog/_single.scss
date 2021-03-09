@@ -1,0 +1,93 @@
+.single-blog {
+    .comments-area {
+        margin-left: 20px;
+        margin-bottom: 20px;
+        @include breakpoint(768) {
+            margin-bottom: 30px;
+        }
+        .comments-title {
+            font-weight: 700;
+            margin-bottom: 45px;
+        }
+        ul {
+            li {
+                display: flex;
+                position: relative;
+                z-index: 1;
+                &:not(:last-child) {
+                    margin-bottom: 22px;
+                    padding-bottom: 22px;
+                }
+                &:not(:last-child) {
+                    &::after {
+                        border-bottom: 1px solid #efefef;
+                        content: "";
+                        top: 0;
+                        height: 100%;
+                        left: -20px;
+                        position: absolute;
+                        width: 100%;
+                        z-index: -1;
+                    }
+                }
+            }
+            article{
+                margin-bottom: 40px;
+                margin-top: 40px;
+
+            }
+        }
+        .comments-img {
+            max-width: 60px;
+            margin-right: 20px;
+            img {
+                border-radius: 50%;
+            }
+        }
+        .media-body {
+            h6 {
+                font-weight: 700;
+                font-size: em(18);
+                margin-bottom: 10px;
+                span {
+                    font-size: em(14);
+                    font-weight: 400;
+                    margin-left: 20px;
+                }
+            }
+            p {
+                color: #6a717e;
+                margin-bottom: 12px;
+            }
+            a{
+                color: $color-primary;
+            }
+        }
+        .comment-reply {
+            color: $color-primary;
+            @include font-face($font-roboto);
+            font-size: em(14);
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: .3s;
+            &:hover {
+                color: darken($color-primary, 5%);
+            }
+        }
+        .comment-respond {
+        }
+        .leave-comment__title {
+            display: flex;
+            justify-content: space-between;
+            #cancel-comment-reply-link {
+                color: $color-black;
+                font-weight: 400;
+                opacity: .6;
+                transition: .3s;
+                &:hover{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

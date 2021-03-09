@@ -1,0 +1,24 @@
+// helpers
+@import "helpers/_helpers.scss";
+
+// vendors
+@import "vendors/_vendors.scss";
+
+// base
+@import "base/_base.scss";
+
+// layout
+@import "layout/_layout.scss";
+
+// modules
+@import "modules/_modules.scss";
+
+// templates
+@import "templates/_templates.scss";
+
+body {
+    transition: all .3s;
+    @include font-face($font-roboto);
+    color: $color-black;
+    overflow-x: hidden;
+}

@@ -1,0 +1,123 @@
+.blog-archive{
+    .blog-sidebar__widget {
+        @include breakpoint(992) {
+            margin-left: 40px;
+        }
+        .widget__items{
+            &:not(:last-child){
+                margin-bottom: 40px;
+            }
+            > ul {
+                > li{
+                   > a{
+                        color: $color-black;
+                        font-size: em(16);
+                        font-weight: 500;
+                        @include font-face($font-roboto);
+                        transition: .3s; 
+                        text-transform: capitalize;
+                        line-height: 32px;
+                        &:hover{
+                            color: $color-primary;
+                        }
+                    }
+                }
+            }
+        }
+
+        .sidebar-widge__title{
+            color: #3c4351;
+            margin-bottom: 25px;
+            @include breakpoint(768) {
+                margin-bottom: 35px;
+            }
+        }
+
+        &-post{
+            padding-right: 30px;
+            li{
+                position: relative;
+                z-index: 1;
+                &:not(:last-child){
+                    margin-bottom: 30px;
+                    &:after{
+                        border-bottom: 1px solid #efefef;
+                        content: "";
+                        height: 100%;
+                        position: absolute;
+                        left: 0;
+                        top: 15px;
+                        width: 100%;
+                        z-index: -1;
+                        @include breakpoint(992) {
+                            left: -30px;
+                        }
+                    }
+                }
+                a{
+                    color: $color-black;
+                    font-size: em(18);
+                    font-weight: 500;
+                    @include font-face($font-roboto);
+                    line-height: 24px;
+                    margin-bottom: 5px;
+                    transition: .3s;
+                    &:hover{
+                        color: $color-primary;
+                    }
+                }
+                span{
+                    color: $color-primary;
+                    font-size: em(14);
+                    font-weight: 400;
+                    @include font-face($font-roboto);
+                }
+            }
+        }
+
+        
+
+        .search-form{
+            display: flex;
+            position: relative;
+            width: 100%;
+            @include breakpoint(992) {
+                width: 300px;
+            }
+            label{
+                width: 100%;
+            }
+            input {
+                border: 1px solid #e7e7e7;
+                color: $color-black;
+                @include font-face($font-roboto);
+                font-size: em(17);
+                font-weight: 400;
+                padding: 18px 25px;
+                transition: .3s;
+                width: 100%;
+                &:focus{
+                    border: 1px solid #cccaca;
+                }
+            }
+       
+            .submit-btn{
+                background: transparent;
+                position: absolute;
+                top: 50%;
+                right: 25px;
+                transform: translateY(-50%);
+            }
+            .search-icon{
+                background: transparent url(..//layout/search.svg);
+                background-repeat: no-repeat;
+                background-position: center center;
+                height: 20px;
+                opacity: .3;
+                width: 20px;
+            }
+        }
+       
+    }
+}
+

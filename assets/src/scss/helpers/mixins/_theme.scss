@@ -1,0 +1,26 @@
+@mixin font-face($font) {
+    font-family: $font;
+}
+
+@mixin breakpoint($width) {
+    @media only screen and (min-width: $width+px) {
+        @content;
+    }
+}
+
+// range slider thumb
+@mixin range-thumb {
+    &::-webkit-slider-thumb {
+        @content;
+    }
+    &::-ms-thumb {
+        @content;
+    }
+    &::-moz-range-thumb {
+        @content;
+    }
+    &::-ms-thumb {
+        @content;
+    }
+}
+

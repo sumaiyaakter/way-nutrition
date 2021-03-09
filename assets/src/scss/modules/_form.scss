@@ -1,0 +1,137 @@
+/*================  login__register-form =================*/
+
+.login__register-form {
+    background: #fff;
+    box-shadow: 0 13px 70px rgba(36, 38, 45, .22);
+    position: absolute;
+    top: 32px;
+    right: 0;
+    padding: 32px;
+    min-width: 290px;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+    transform: translateY(50px);
+    z-index: 99999;
+    &:after {
+        background: $color-white;
+        transform: rotate(45deg) translateY(-12px);
+        content: "";
+        right: 30px;
+        height: 15px;
+        position: absolute;
+        top: 0;
+        width: 15px;
+        z-index: -1;
+    }
+    @include breakpoint(576) {
+        min-width: 400px;
+    }
+    .title {
+        @include font-face($font-oswald);
+        font-size: em(24);
+        font-weight: 400;
+        text-transform: uppercase;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    .form-group {
+        margin-bottom: 30px;
+    }
+    .ss-btn {
+        max-height: 60px;
+        line-height: 60px;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    h6 {
+        font-weight: 300;
+        font-size: em(16);
+        a {
+            color: $color-primary;
+            text-transform: initial;
+            &:hover {
+                color: darken($color-primary, 10%);
+            }
+        }
+    }
+}
+
+/*================ Login =================*/
+
+.login__form {
+    right: -50px;
+    @include breakpoint(576) {
+        right: 15px;
+    }
+    &:after {
+        right: 100px;
+        @include breakpoint(576) {
+            right: 40px;
+        }
+    }
+    .forgot__password {
+        color: $color-primary;
+        @include font-face($font-roboto);
+        font-size: em(16);
+        font-weight: 300;
+        float: right;
+        transition: .3s;
+        &:hover {
+            color: darken($color-primary, 10%);
+        }
+    }
+}
+
+/*================  Register =================*/
+
+.logreg__form-is-visible {
+    .login__register-form {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+
+/*================ input field(single-blog)=================*/
+
+.single-blog {
+    .leave-comment {
+        &__title {
+            font-weight: 700;
+            margin-bottom: 45px;
+        }
+        .form__field {
+            margin-bottom: 22px;
+        }
+        label {
+            color: $color-black;
+            font-size: em(18);
+            font-weight: 500;
+            @include font-face($font-roboto);
+        }
+        .form-control {
+            border: 1px solid #e7e7e7;
+            @include font-face($font-roboto);
+            font-size: em(15);
+            font-weight: 400;
+            margin-top: 15px;
+            padding: 20px;
+            transition: .3s;
+            width: 100%;
+            &:focus {
+                background: #f6f6f6;
+            }
+        }
+        .submit-btn {
+            background: $color-primary;
+            border-radius: 0px;
+            color: #fff;
+            font-size: em(15);
+            padding: 0 60px;
+            &:hover {
+                background: darken($color-primary, 5%);
+            }
+        }
+    }
+}
